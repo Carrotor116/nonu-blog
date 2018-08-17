@@ -1,4 +1,4 @@
 ## about
 
 person blog: [Nonu's Blog](https://nonu.netlify.com/)
-> theme: [hexo-theme-curry](https://github.com/gary-Shen/hexo-theme-curry)
+> theme: [hexo-theme-archer](https://github.com/fi3ework/hexo-theme-archer)
