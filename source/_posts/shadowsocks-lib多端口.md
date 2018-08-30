@@ -1,7 +1,8 @@
 ---
-title: shadowsocks-lib多端口
+title: shadowsocks-libev多端口
 date: 2018-08-28 03:59:27
-tags:
+tags: linux
+id: ss-libev-multi-port
 ---
 ## 环境
 os: centos 7 

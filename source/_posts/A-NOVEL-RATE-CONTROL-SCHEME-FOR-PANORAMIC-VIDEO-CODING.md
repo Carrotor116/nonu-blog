@@ -2,6 +2,7 @@
 title: A NOVEL RATE CONTROL SCHEME FOR PANORAMIC VIDEO CODING (翻译)
 date: 2018-08-15 23:40:24
 tags: 论文翻译
+id: rc-scheme-for-panoramic-video-coding
 ---
 
 ## 摘要 (ABSTRACT) 
