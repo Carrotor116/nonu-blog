@@ -35,7 +35,7 @@ social:
 # -----
 about:
   enable: true
-  image: '/intro/about-bg.jpg'
+  image: '/intro/about-bg-cpr.jpg'
 
 # ========== Site ========== #
 # title of the site
@@ -45,11 +45,11 @@ main_title: nonu's Lab.
 # subtitle
 subtitle: EL PSY CONGROO
 # site haeder image
-site_header_image: '/intro/index-bg.jpg'
+site_header_image: '/intro/index-bg-cpr.jpg'
 # post haeder image
-post_header_image: '/intro/post-bg.png'
+post_header_image: '/intro/post-bg-cpr.png'
 # 404 image
-_404_image: '/intro/404-bg.jpg'
+_404_image: '/intro/404-bg-cpr.jpg'
 
 # ========== Search ========== #
 algolia_search:
