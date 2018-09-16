@@ -99,3 +99,9 @@ jsonContent:
     excerpt: false
     categories: true
     tags: true
+
+math:
+    engine: 'mathjax'
+    enable: true
+    mathjax: 
+      src: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML
