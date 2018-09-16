@@ -1,9 +1,11 @@
 ---
-title: shadowsocks-libev多端口
+title: Shadowsocks-libev 多端口配置方式
 date: 2018-08-28 03:59:27
 tags: linux
 id: ss-libev-multi-port
 ---
+易使用的 shadowsocks-libev 多端口配置方式<!--more-->
+
 ## 环境
 os: centos 7 
 ss: shadowsocks-libev 3.2.0
@@ -13,7 +15,6 @@ ss: shadowsocks-libev 3.2.0
 1. 创建ss配置文件
 2. 创建ss批量启动脚本
 3. 配置systemd自启动
-<!--more-->
 
 ### 创建ss配置文件
 新建`/et/shadowsocks-libev/config_x.json`文件
