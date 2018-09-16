@@ -44,23 +44,23 @@ $$
 D(f_{x}, f_{y}) = \sum_{x=0}^{W_{1}-1}\sum_{y=0}^{W_{2}-1} i(x, y)h(x,y)e^{-j2\pi(f_{x}x + f_{y}y)}
 $$
 
-$f_{x}$ 和 $f_{y}$ 是空间频率变量(the spatial frequency variables)， $W_{1}$ 和 $W_{2}$ 分别为图片的宽高， $h(x,y)$ 是由于减少边界影响的圆形汉宁宽口（a circle Hanning window）。令$A(f_{x}, f_{y}) = |D(f_{x}, f_{y})|$ 表示傅里叶振幅谱，则其是input image 的一个高维表示。
+$f\_{x}$ 和 $f\_{y}$ 是空间频率变量(the spatial frequency variables)， $W\_{1}$ 和 $W\_{2}$ 分别为图片的宽高， $h(x,y)$ 是由于减少边界影响的圆形汉宁宽口（a circle Hanning window）。令$A(f\_{x}, f\_{y}) = |D(f\_{x}, f\_{y})|$ 表示傅里叶振幅谱，则其是input image 的一个高维表示。
 
-* 使用PCA对 $A(f_{x}, f_{y})$ 降维
+* 使用PCA对 $A(f\_{x}, f\_{y})$ 降维
 
 $$
 g_{t} = \iint A(f_{x}, f_{y})^{2}\phi_{t}(f_{x}, f_{y})df_{x}df_{y}
 $$
 
-$\phi(f_{x}, f_{y}) = \{\phi_{t}(f_{x}, f_{y}) | t = 1, .., L\}$ 是高斯公式集合，该集合分布4种频率，每个频率8个方向上，所以 $L$ 为32。
+$\phi(f\_{x}, f\_{y}) = \{\phi\_{t}(f\_{x}, f\_{y}) | t = 1, .., L\}$ 是高斯公式集合，该集合分布4种频率，每个频率8个方向上，所以 $L$ 为32。
 
-* 令 $g = \{ g_{t} | t = 1, .. , L\}$
+* 令 $g = \{ g\_{t} | t = 1, .. , L\}$
 
-$g_{t}$ 分为 $4 \times  4$ 的子区域。16个子区域的均值作为输入图片的表示
+$g\_{t}$ 分为 $4 \times  4$ 的子区域。16个子区域的均值作为输入图片的表示
 
-* 定义Gist为 $G = \{G_{t} | t = 1, .., N_{G}\}$
+* 定义Gist为 $G = \{G\_{t} | t = 1, .., N\_{G}\}$
 
-$N_{G} = 512 << W_{1} \times W_{2} $ ，$512 = 32 \times 16 = (4 \times 8) \times (4 \times 4)$
+$N\_{G} = 512 << W\_{1} \times W\_{2} $ ，$512 = 32 \times 16 = (4 \times 8) \times (4 \times 4)$
 
 
 ### 0x02 color histogram feature 计算
@@ -76,16 +76,16 @@ $N_{G} = 512 << W_{1} \times W_{2} $ ，$512 = 32 \times 16 = (4 \times 8) \time
 $$
 H_{j} = \frac{\sum_{p\in I}\delta\{I(p)\in b_{j}\}}{W_{1} \times W_{2}}
 $$
-$\delta\{ condition \} $ 当condition成立的时候为其值为1，否则为0，$W_{1}$ 和 $W_{1}$ 为宽高
+$\delta\{ condition \} $ 当condition成立的时候为其值为1，否则为0，$W\_{1}$ 和 $W\_{1}$ 为宽高
 
 * 定义图像 $I$ 的颜色直方图 $H$ 为
 
-$ H = \{H_{t} | t = 1, .. N_{H}\}$， $N_{H}$ （$ = 8 \times 8 \times 8 = 512 $），即rgb三个通道，每个8-bin
+$ H = \{H\_{t} | t = 1, .. N\_{H}\}$， $N\_{H}$ （$ = 8 \times 8 \times 8 = 512 $），即rgb三个通道，每个8-bin
 
 
 ### 0x03 Image similarity 计算
 
-* 定义图片 $I_{i}$ 和 $I_{j}$ 的相似度为 $F(I_{i}, F_{j})$
+* 定义图片 $I\_{i}$ 和 $I\_{j}$ 的相似度为 $F(I\_{i}, F\_{j})$
 
 $$
 F(I_{i}, F_{j}) = \alpha f_{G}(I_{i}, I_{j}) + (1- \alpha) f_{H}(I_{i}, I_{j}) \\
@@ -93,23 +93,23 @@ f_{G}(I_{i}, I_{j}) = \sum_{t=1}^{N_{G}}(G_{ti} - G_{tj})^{2} \\
 f_{H}(I_{i}, I_{j}) = 1 - \sum_{t =1}^{N_{H}}min(H_{ti}, H_{tj})
 $$
 
-$f_{G}(I_{i}, I_{j})$ 是Gist是相似度， $G_{ti}$ 为图 $I_{i}$ 的Gist值； $f_{H}(I_{i}, I_{j})$ 是color histogram feature是相似度， $H_{ti}$ 为图 $I_{i}$ 的Gist值。$\alpha$ 是 $f_{G}$ 的权重，本论文中取值0.7
+$f\_{G}(I\_{i}, I\_{j})$ 是Gist是相似度， $G\_{ti}$ 为图 $I\_{i}$ 的Gist值； $f\_{H}(I\_{i}, I\_{j})$ 是color histogram feature是相似度， $H\_{ti}$ 为图 $I\_{i}$ 的Gist值。$\alpha$ 是 $f\_{G}$ 的权重，本论文中取值0.7
 
-**$F(I_{i}, F_{j})$、  $f_{G}(I_{i}, I_{j})$ 和 $f_{H}(I_{i}, I_{j})$ 越小，代表图$I_{i}$、$I_{j}$ 越相似。**
+**$F(I\_{i}, F\_{j})$、  $f\_{G}(I\_{i}, I\_{j})$ 和 $f\_{H}(I\_{i}, I\_{j})$ 越小，代表图$I\_{i}$、$I\_{j}$ 越相似。**
 
 ### 0x04 fitting model 计算
 
 **将显著性检测算法计算的saliency maps 的统计数据（the statistical data）作为自变量点集合 ** 
 **将`ground true image`集合的统计数据作为因变量点集合 **
 
-* 计算 the saliency maps 的 `直方图` 作为统计数据。定义并计算每张图的直方图 $H_{i}^{s}(v)$ 和$H_{i}^{n}(v)$
+* 计算 the saliency maps 的 `直方图` 作为统计数据。定义并计算每张图的直方图 $H\_{i}^{s}(v)$ 和$H\_{i}^{n}(v)$
 
 $$
 H_{i}^{s}(v) = \sum_{p\in I_{i}} \delta\{S(p)=v\}\delta\{G(p)=255\} \\
       H_{i}^{n}(v) = \sum_{p\in I_{i}} \delta\{S(p)=v\}\delta\{G(p)=0\}
 $$
 
-分别表示`(`与 groud true saliency map $G_{i}$ 的显著（salient）区域`)`对应的saliency map的区域上像素（该像素的saliency value 为 $v$）的总数，和`(`与 groud true saliency map $G_{i}$ 的非显著（non-salient）区域`)`对应的saliency map的区域上像素（该像素的saliency value 为 $v$）的总数。
+分别表示`(`与 groud true saliency map $G\_{i}$ 的显著（salient）区域`)`对应的saliency map的区域上像素（该像素的saliency value 为 $v$）的总数，和`(`与 groud true saliency map $G\_{i}$ 的非显著（non-salient）区域`)`对应的saliency map的区域上像素（该像素的saliency value 为 $v$）的总数。
 
 其中$S(p)$表示像素 $p$ 的 saliency value， $G(p)$ 表示 the ground  true saliency map中像素 $p$ 的值。$\delta\{ . \}$ 当其条件满足时其值为1，否则为0
 
@@ -125,17 +125,17 @@ $$
 
 * 根据点集合计算fitting model的参数
 
-fitting model为一条由S型和线性函数组成（sigmoid and linear）。基于直方图获得自变量和因变量的点集合，用 $(x_{i}, y_{i})$ 表达每个拟合点
+fitting model为一条由S型和线性函数组成（sigmoid and linear）。基于直方图获得自变量和因变量的点集合，用 $(x\_{i}, y\_{i})$ 表达每个拟合点
 
-   1. $x_{i} \in \{0, 1, ..., 255 \}$ 作为自变量，取自 saliency image 中的一个确定像素的 saliency value 值
+   1. $x\_{i} \in \{0, 1, ..., 255 \}$ 作为自变量，取自 saliency image 中的一个确定像素的 saliency value 值
 
-   2. $y_{i} \in \{0, 1, ..., 255 \}$ 作为因变量，由与 $x_{i}$ 对应的ground true 中的像素的 saliency value 值
+   2. $y\_{i} \in \{0, 1, ..., 255 \}$ 作为因变量，由与 $x\_{i}$ 对应的ground true 中的像素的 saliency value 值
 
    3. 在像素点集合（fitting points set）中，对任一 saliency value 值  $v$ ，$(v, 255)$ 的像素点集合的size是 $H^{s}(v)$，$(v, 0)$ 的像素点集合的size是 $H^{n}(v)$ 
 
-   4. 使用 S 型和线性曲线拟合 $(x_{i}, y_{i})$ 得到 fitting model
+   4. 使用 S 型和线性曲线拟合 $(x\_{i}, y\_{i})$ 得到 fitting model
 
-采用论文`[34]` 的fitting model，其有五个待定参数 $(\beta_{1} - \beta_{5})$
+采用论文`[34]` 的fitting model，其有五个待定参数 $(\beta\_{1} - \beta\_{5})$
 
 $$
 f(x_[i]) = \beta_{1}(\frac{1}{2} - \frac{1}{e^{\beta_{2}(x_{i}-\beta_{3})}}) + \beta_{4}x_{i}+\beta_{5}
