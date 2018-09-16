@@ -52,13 +52,13 @@ $$
 g_{t} = \iint A(f_{x}, f_{y})^{2}\phi_{t}(f_{x}, f_{y})df_{x}df_{y}
 $$
 
-$\phi(f\_{x}, f\_{y}) = \{\phi\_{t}(f\_{x}, f\_{y}) | t = 1, .., L\}$ 是高斯公式集合，该集合分布4种频率，每个频率8个方向上，所以 $L$ 为32。
+$\phi(f\_{x}, f\_{y}) = \\{\phi\_{t}(f\_{x}, f\_{y}) | t = 1, .., L\\}$ 是高斯公式集合，该集合分布4种频率，每个频率8个方向上，所以 $L$ 为32。
 
-* 令 $g = \{ g\_{t} | t = 1, .. , L\}$
+* 令 $g = \\{ g\_{t} | t = 1, .. , L\\}$
 
 $g\_{t}$ 分为 $4 \times  4$ 的子区域。16个子区域的均值作为输入图片的表示
 
-* 定义Gist为 $G = \{G\_{t} | t = 1, .., N\_{G}\}$
+* 定义Gist为 $G = \\{G\_{t} | t = 1, .., N\_{G}\\}$
 
 $N\_{G} = 512 << W\_{1} \times W\_{2} $ ，$512 = 32 \times 16 = (4 \times 8) \times (4 \times 4)$
 
@@ -76,11 +76,11 @@ $N\_{G} = 512 << W\_{1} \times W\_{2} $ ，$512 = 32 \times 16 = (4 \times 8) \t
 $$
 H_{j} = \frac{\sum_{p\in I}\delta\{I(p)\in b_{j}\}}{W_{1} \times W_{2}}
 $$
-$\delta\{ condition \} $ 当condition成立的时候为其值为1，否则为0，$W\_{1}$ 和 $W\_{1}$ 为宽高
+$\delta\\{ condition \\} $ 当condition成立的时候为其值为1，否则为0，$W\_{1}$ 和 $W\_{1}$ 为宽高
 
 * 定义图像 $I$ 的颜色直方图 $H$ 为
 
-$ H = \{H\_{t} | t = 1, .. N\_{H}\}$， $N\_{H}$ （$ = 8 \times 8 \times 8 = 512 $），即rgb三个通道，每个8-bin
+$ H = \\{H\_{t} | t = 1, .. N\_{H}\\}$， $N\_{H}$ （$ = 8 \times 8 \times 8 = 512 $），即rgb三个通道，每个8-bin
 
 
 ### 0x03 Image similarity 计算
@@ -111,7 +111,7 @@ $$
 
 分别表示`(`与 groud true saliency map $G\_{i}$ 的显著（salient）区域`)`对应的saliency map的区域上像素（该像素的saliency value 为 $v$）的总数，和`(`与 groud true saliency map $G\_{i}$ 的非显著（non-salient）区域`)`对应的saliency map的区域上像素（该像素的saliency value 为 $v$）的总数。
 
-其中$S(p)$表示像素 $p$ 的 saliency value， $G(p)$ 表示 the ground  true saliency map中像素 $p$ 的值。$\delta\{ . \}$ 当其条件满足时其值为1，否则为0
+其中$S(p)$表示像素 $p$ 的 saliency value， $G(p)$ 表示 the ground  true saliency map中像素 $p$ 的值。$\delta\\{ . \\}$ 当其条件满足时其值为1，否则为0
 
 * 定义并计算 $H^{s}$ 和 $H^{s}$ 
 
@@ -127,9 +127,9 @@ $$
 
 fitting model为一条由S型和线性函数组成（sigmoid and linear）。基于直方图获得自变量和因变量的点集合，用 $(x\_{i}, y\_{i})$ 表达每个拟合点
 
-   1. $x\_{i} \in \{0, 1, ..., 255 \}$ 作为自变量，取自 saliency image 中的一个确定像素的 saliency value 值
+   1. $x\_{i} \in \\{0, 1, ..., 255 \\}$ 作为自变量，取自 saliency image 中的一个确定像素的 saliency value 值
 
-   2. $y\_{i} \in \{0, 1, ..., 255 \}$ 作为因变量，由与 $x\_{i}$ 对应的ground true 中的像素的 saliency value 值
+   2. $y\_{i} \in \\{0, 1, ..., 255 \\}$ 作为因变量，由与 $x\_{i}$ 对应的ground true 中的像素的 saliency value 值
 
    3. 在像素点集合（fitting points set）中，对任一 saliency value 值  $v$ ，$(v, 255)$ 的像素点集合的size是 $H^{s}(v)$，$(v, 0)$ 的像素点集合的size是 $H^{n}(v)$ 
 
