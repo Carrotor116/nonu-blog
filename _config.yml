@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: nonu's Lab
-subtitle:
-description:
+title: Nonu's Lab
+subtitle: EL PSY CONGROO
+description: 
 keywords:
-author: nonu
-language:
+author: Nonu
+language: zh-CN
 timezone:
 
 # URL
@@ -74,7 +74,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: archer
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -100,8 +100,8 @@ jsonContent:
     categories: true
     tags: true
 
-math:
-    engine: 'mathjax'
-    enable: true
-    mathjax: 
-      src: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML
+# math:
+#     engine: 'mathjax'
+#     enable: true
+#     mathjax: 
+#       src: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML
