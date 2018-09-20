@@ -2,9 +2,8 @@
 title: Disentangling Structure and Aesthetics for Style-Aware Image Completion
 id: Style-Aware-Image-completion
 date: 2018-09-20 08:46:56
-tags:
+tags: ['style-aware', 'image completion', 'image']
 mathjax: true
-
 ---
 
 一种基于AIC的图像修复方法，考虑图片的结构信息和视觉风格信息来选取patches 并且对其进行自适应风格化，从而提高图像修复效果。
@@ -27,7 +26,7 @@ mathjax: true
 
 ### Disentangling Patch Structure and Aesthetics
 
-使用两个三元组卷积神经网络进行特征嵌入（[style embedding](#style embedding) & [structure embedding](#structure embedding)）。
+使用两个三元组卷积神经网络进行特征嵌入（[style embedding](#style-embedding) & [structure embedding](#structure-embedding)）。
 $$
 \{g_{s}(p), g_{z}(p)\}
 $$

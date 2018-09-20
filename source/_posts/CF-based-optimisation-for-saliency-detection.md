@@ -3,11 +3,15 @@ title: CF-based optimisation for saliency detection 理论
 id: CFO4saliency_detection
 date: 2018-09-15 21:32:07
 mathjax: true
-tags:
+tags: ['saliency detection', 'image']
 ---
 一种基于簇类-拟合的显著性检测优化算法，即对已有的显著性检测算法的输出结果进行结果优化的方法。<!-- more -->
 
 > 论文：[CF-based optimisation for saliency detection](https://ieeexplore.ieee.org/document/8361747/)
+
+---
+
+
 
 ## 原理步骤
 
@@ -28,7 +32,7 @@ tags:
 
 ### 0x01 Gist 计算
 
-**含义：表示图像的场景信息 **
+**含义：表示图像的场景信息**
 
 * convert a color image to a intensity image 
 
@@ -65,7 +69,7 @@ $N\_{G} = 512 << W\_{1} \times W\_{2} $ ，$512 = 32 \times 16 = (4 \times 8) \t
 
 ### 0x02 color histogram feature 计算
 
-**含义：颜色直方图通过对整张图中不同颜色的比例来描述图片颜色的整体分布。 **
+**含义：颜色直方图通过对整张图中不同颜色的比例来描述图片颜色的整体分布。**
 
 * R、B、G颜色通道各使用8-bin直方图，其指为0到255。
 
