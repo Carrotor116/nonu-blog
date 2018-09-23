@@ -2,7 +2,7 @@
 title: >-
   Meta-metric for saliency detection evaluation metrics based on application
   preference
-id: custom_id
+id: meta-metric-for-sdem
 date: 2018-09-23 09:28:36
 mathjax: true
 tags:
