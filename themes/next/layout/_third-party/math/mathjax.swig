@@ -18,3 +18,11 @@
     });
 </script>
 <script type="text/javascript" src="{{ theme.math.mathjax.cdn }}"></script>
+
+<style type="text/css">
+@media (min-width: 1200px) {
+  .MathJax {
+      font-size: 84%;
+  }
+}
+</style>

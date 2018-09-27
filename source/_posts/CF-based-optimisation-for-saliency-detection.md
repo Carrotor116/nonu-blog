@@ -3,7 +3,7 @@ title: CF-based optimisation for saliency detection 理论
 id: CFO4saliency_detection
 date: 2018-09-15 21:32:07
 mathjax: true
-tags: ['saliency detection', 'image']
+tags: ['image colour analysis', 'image enhancement', 'optimisation']
 ---
 一种基于簇类-拟合的显著性检测优化算法，即对已有的显著性检测算法的输出结果进行结果优化的方法。<!-- more -->
 

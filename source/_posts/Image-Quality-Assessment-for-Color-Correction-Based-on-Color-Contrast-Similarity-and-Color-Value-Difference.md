@@ -4,7 +4,7 @@ title: >-
   Similarity and Color Value Difference
 id: IQA4color-correction
 date: 2018-09-20 15:29:02
-tags: ['image', 'image quality assessment', 'color contrast', 'color value difference']
+tags: ['image quality assessment', 'color correction', 'visual saliency', 'color contrast similarity', 'color value difference']
 mathjax: true
 ---
 

@@ -5,7 +5,7 @@ title: >-
 id: meta-metric-for-sdem
 date: 2018-09-23 09:28:36
 mathjax: true
-tags:
+tags: ['Saliency detection', 'Traditional evaluation metrics', 'Image quality assessment', 'Content-based image retrieval']
 ---
 
 本文提出了一种基于应用偏好对 SDEM 进行评价（选择）的框架
