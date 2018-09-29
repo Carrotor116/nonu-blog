@@ -18,6 +18,10 @@ tags: ['Saliency detection', 'Traditional evaluation metrics', 'Image quality as
 
 
 
+---
+
+
+
 ## 概述
 
 * 根据 $SDA\_{k}$，对数据集中每个图片进行 [Saliency weighted CBIR](#Saliency-weighted-CBIR)，得到 $L\_{k}$
@@ -72,8 +76,10 @@ $$
 ### 计算 SDA 平均精度
 
 $$
-mAP_{k} = \frac{\sum_{i}AP_{k}(q_{i})}{N},i=1, 2,..,N \\
-APk(q_{i}) = \frac{\sum_{l_{j}\in \hat{L}(qi)}Precision (l_{j},L_{k}(q_{i}))}{|\hat{L}(q_{i})|}，j=1,2,..,|\hat{L}(q_{i}|
+\begin{aligned}
+& mAP_{k} = \frac{\sum_{i}AP_{k}(q_{i})}{N},i=1, 2,..,N \\
+& APk(q_{i}) = \frac{\sum_{l_{j}\in \hat{L}(qi)}Precision (l_{j},L_{k}(q_{i}))}{|\hat{L}(q_{i})|}，j=1,2,..,|\hat{L}(q_{i}|
+\end{aligned}
 $$
 
 $l\_{j}$ 的 `ground-truth` 中对应搜索图片 $I\_{i}$ 所得的有序列表中 第 $j$ 个图片。$mAP\_{k}$ 越大，$SDA\_{k}$ 越好

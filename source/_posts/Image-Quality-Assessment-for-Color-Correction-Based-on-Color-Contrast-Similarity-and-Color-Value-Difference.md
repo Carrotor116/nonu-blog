@@ -14,6 +14,8 @@ mathjax: true
 
 > 论文：[Image Quality Assessment for Color Correction Based on Color Contrast Similarity and Color Value Difference](https://ieeexplore.ieee.org/document/7763834/)
 
+
+
 ---
 
 
@@ -67,8 +69,10 @@ confidence map 和saliency map 结合得到weighting map
 #### 对比相似度计算
 
 $$
-\mu_{x} = \sum_{i=1}^{N}w_{i}\times x_{i} \\
-\sigma_{x} = (\sum_{i=1}^{N}(w_{i}\times(x_{i}- \mu_{x})^{2})^{1/2}
+\begin{aligned}
+& \mu_{x} = \sum_{i=1}^{N}w_{i}\times x_{i} \\
+& \sigma_{x} = (\sum_{i=1}^{N}(w_{i}\times(x_{i}- \mu_{x})^{2})^{1/2}
+\end{aligned}
 $$
 $x$ 和 $y$ 各自为matching map 和target map 的对应区域的具有相同圆心的`圆形对称高斯窗口`。$w =\\{w\_{i}|i=1, ..N\\}$ 为 $11 \times 11$的`圆形对称高斯权重函数`，（由于是权重，所以$\sum\limits\_{i=1}^{N}w\_{i} = 1$ 。）$x\_{i}$ 是 $x$ 上像素 $i$ 的值，所以$\mu\_{x}$ 表示应用`高斯权重`的**像素值**。$\sigma\_{x}$ 表示高斯窗口下的像素的**标准差**
 $$
@@ -80,8 +84,10 @@ $c(x, y)$ 通过 $\sigma\_{x}$ 和 $\sigma\_{x}$ 来计算对比相似度（原�
 
 应用weighting map 计算对比图相似图的加权平均值 $e\_{n}, n\in \\{1, 2, 3, 4\\}$
 $$
-e_{n} = \frac{\sum_{i}^{p} \sum_{j}^{q}(m(i,j)\times D_{n}(i,j))}{\sum_{i}^{p} \sum_{j}^{q}m(i,j)} \\
-m(i,j) = M_{c}(i,j)\times M_{s}(i,j)
+\begin{aligned}
+& e_{n} = \frac{\sum_{i}^{p} \sum_{j}^{q}(m(i,j)\times D_{n}(i,j))}{\sum_{i}^{p} \sum_{j}^{q}m(i,j)} \\
+& m(i,j) = M_{c}(i,j)\times M_{s}(i,j)
+\end{aligned}
 $$
 
 
@@ -109,8 +115,10 @@ $$
 
 一些非常差颜色一致性的局部区域可能导致整个输入图像之间颜色一致性的显着下降。由此提出基于色差跨度的评估组件
 $$
-s(X,Y)=(\sum_{i=1}^{k}fa(|X-Y|,i) - \sum_{i=1}^{k}fi(|X-Y|,i)) /k\\
-k = max(100.0001 \times p \times q)
+\begin{aligned}
+& s(X,Y)=(\sum_{i=1}^{k}fa(|X-Y|,i) - \sum_{i=1}^{k}fi(|X-Y|,i)) /k\\
+& k = max(100.0001 \times p \times q)
+\end{aligned}
 $$
 $X$、$Y$ 为对比图，$p$ 和 $q$ 为宽高，$|X-Y|$ 表示色差图，$fa$ 和 $fi$ 分别是色差图中的第 $i$ 个最大和最小的像素值。而 $s(X,Y)$ 即表达两张图之间的色差跨度（value difference span）
 $$
@@ -126,8 +134,10 @@ $$
 
 采用线性混合模型计算
 $$
-V = \alpha \times \bar{V1} + \beta \times  \bar{V2}  + \gamma \times  \bar{V2},\\
-s.t. \quad \alpha \geq 0, \beta \geq 0, \gamma \geq 0, \alpha+\beta+\gamma=1
+\begin{aligned}
+& V = \alpha \times \bar{V1} + \beta \times  \bar{V2}  + \gamma \times  \bar{V2},\\
+& s.t. \quad \alpha \geq 0, \beta \geq 0, \gamma \geq 0, \alpha+\beta+\gamma=1
+\end{aligned}
 $$
 
 使用线性模型，其中 $\alpha$、$\beta$、$\gamma$  可调整参数，本文中由实验得各自取值为 $\alpha=0.4, \beta=0.2,\gamma=0.4$ 

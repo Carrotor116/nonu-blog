@@ -92,9 +92,13 @@ $ H = \\{H\_{t} | t = 1, .. N\_{H}\\}$， $N\_{H}$ （$ = 8 \times 8 \times 8 = 
 * 定义图片 $I\_{i}$ 和 $I\_{j}$ 的相似度为 $F(I\_{i}, F\_{j})$
 
 $$
-F(I_{i}, F_{j}) = \alpha f_{G}(I_{i}, I_{j}) + (1- \alpha) f_{H}(I_{i}, I_{j}) \\
-f_{G}(I_{i}, I_{j}) = \sum_{t=1}^{N_{G}}(G_{ti} - G_{tj})^{2} \\
-f_{H}(I_{i}, I_{j}) = 1 - \sum_{t =1}^{N_{H}}min(H_{ti}, H_{tj})
+\begin{equation*}
+\begin{aligned}
+& F(I_{i}, F_{j}) = \alpha f_{G}(I_{i}, I_{j}) + (1- \alpha) f_{H}(I_{i}, I_{j}) \\
+& f_{G}(I_{i}, I_{j}) = \sum_{t=1}^{N_{G}}(G_{ti} - G_{tj})^{2} \\
+& f_{H}(I_{i}, I_{j}) = 1 - \sum_{t =1}^{N_{H}}min(H_{ti}, H_{tj})
+\end{aligned}
+\end{equation*}
 $$
 
 $f\_{G}(I\_{i}, I\_{j})$ 是Gist是相似度， $G\_{ti}$ 为图 $I\_{i}$ 的Gist值； $f\_{H}(I\_{i}, I\_{j})$ 是color histogram feature是相似度， $H\_{ti}$ 为图 $I\_{i}$ 的Gist值。$\alpha$ 是 $f\_{G}$ 的权重，本论文中取值0.7
@@ -109,8 +113,10 @@ $f\_{G}(I\_{i}, I\_{j})$ 是Gist是相似度， $G\_{ti}$ 为图 $I\_{i}$ 的Gis
 * 计算 the saliency maps 的 `直方图` 作为统计数据。定义并计算每张图的直方图 $H\_{i}^{s}(v)$ 和$H\_{i}^{n}(v)$
 
 $$
-H_{i}^{s}(v) = \sum_{p\in I_{i}} \delta\{S(p)=v\}\delta\{G(p)=255\} \\
-      H_{i}^{n}(v) = \sum_{p\in I_{i}} \delta\{S(p)=v\}\delta\{G(p)=0\}
+\begin{aligned}
+& H_{i}^{s}(v) = \sum_{p\in I_{i}} \delta\{S(p)=v\}\delta\{G(p)=255\} \\
+& H_{i}^{n}(v) = \sum_{p\in I_{i}} \delta\{S(p)=v\}\delta\{G(p)=0\}
+\end{aligned}
 $$
 
 分别表示`(`与 groud true saliency map $G\_{i}$ 的显著（salient）区域`)`对应的saliency map的区域上像素（该像素的saliency value 为 $v$）的总数，和`(`与 groud true saliency map $G\_{i}$ 的非显著（non-salient）区域`)`对应的saliency map的区域上像素（该像素的saliency value 为 $v$）的总数。
@@ -120,8 +126,10 @@ $$
 * 定义并计算 $H^{s}$ 和 $H^{s}$ 
 
 $$
-H^{s}(v) = \sum_{i=1}^{|T|}H_{i}^{s}(v) \\
-H^{n}(v) = \sum_{i=1}^{|T|}H_{i}^{n}(v)
+\begin{aligned}
+& H^{s}(v) = \sum_{i=1}^{|T|}H_{i}^{s}(v) \\
+& H^{n}(v) = \sum_{i=1}^{|T|}H_{i}^{n}(v)
+\end{aligned}
 $$
 
 分别为 saliency value 为 $v$ 且对应 the ground true saliency map 是显著的像素的总数，和saliency value 为 $v$ 且对应 the ground true saliency map 是非显著的像素的总数。$|T|$ 表示 image 集合 $T$ 内的数量。
