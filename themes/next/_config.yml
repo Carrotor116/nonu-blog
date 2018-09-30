@@ -864,8 +864,10 @@ vendors:
 
   # Internal version: 2.1.5
   # See: http://fancyapps.com/fancybox/
-  fancybox: https://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js
-  fancybox_css: https://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css
+  # fancybox: https://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js
+  # fancybox_css: https://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css
+  fancybox: https://cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.js
+  fancybox_css: https://cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.css
 
   # Internal version: 1.0.6
   # See: https://github.com/ftlabs/fastclick

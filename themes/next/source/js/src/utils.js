@@ -37,6 +37,11 @@ NexT.utils = NexT.$u = {
         }
       }
     });
+    $('[data-fancybox]').fancybox({
+       protect: true,
+       animationEffect: "fade",
+       transitionEffect: "zoom-in-out"
+     });
   },
 
   lazyLoadPostsImages: function() {
