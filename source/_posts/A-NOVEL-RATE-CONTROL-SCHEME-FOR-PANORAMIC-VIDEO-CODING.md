@@ -119,4 +119,4 @@ id: rc-scheme-for-panoramic-video-coding
 
 [19] Shengxi Li Mai Xu Zulin Wang Xiaoyan Sun "Optimal bit allocation for ctu level rate control in hevc" IEEE Transactions on Circuits and Systems for Video Technology (TCSVT) 2016. 
 
-> 原文  {% asset_link A_novel_rate_control_scheme_for_panoramic_video_coding.pdf  A NOVEL RATE CONTROL SCHEME FOR PANORAMIC VIDEO CODING %}
+> 原文: [A novel rate control scheme for panoramic video coding](https://ieeexplore.ieee.org/document/8019379)
