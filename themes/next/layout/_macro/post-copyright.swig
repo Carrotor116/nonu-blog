@@ -1,3 +1,6 @@
+<br>
+<br>
+<br>
 <ul class="post-copyright">
   <li class="post-copyright-author">
     <strong>{{ __('post.copyright.author') + __('symbol.colon') }} </strong>{#
