@@ -12,6 +12,7 @@ social:
   # wechat and qq should be a path of qr-code image
   # wechat: /assets/example_qr.png
   qq: 
+  telegram: 
   weibo: 
   zhihu: 
   douban: 
@@ -24,23 +25,24 @@ social:
   v2ex: 
   bilibili: 
   linkedin: 
+  steam: 
   others: 
   rss: 
 # friends
-# -----
 # friends:
-  # friendA: //www.baidu.com
-  # friendB: //www.google.com
-  # friendC: 
-# -----
+#   friendA: //www.baidu.com
+#   friendB: //www.google.com
+#   friendC: 
 about:
   enable: true
   image: '/intro/about-bg-cpr.jpg'
 
 # ========== Site ========== #
-# title of the site
-SEO_title: nonu's Lab
-# main title
+# title of the site (good for SEO)
+SEO_title: nonu's Lab.
+# keywords for site (good for SEO)
+# SEO_keywords:
+# main title shown in header image
 main_title: nonu's Lab.
 # subtitle
 subtitle: EL PSY CONGROO
@@ -69,9 +71,6 @@ comment:
   livere_uid: 
   # Disqus  site: https://disqus.com/
   disqus_shortname: 
-  # Changyan  site: http://changyan.kuaizhan.com/
-  changyan_appid: 
-  changyan_conf: 
   # Gitment  site: https://github.com/imsun/gitment
   gitment_owner: 
   gitment_repo: 
@@ -100,7 +99,7 @@ CNZZ_analytics:
 
 # ========== Others ========== #
 # favicon
-favicon: /avatar/CaSO4.jpg
+favicon: /assets/favicon.ico
 # truncate length of abstracts in index page (the default is 300, there will be no abstruct if you input 0)
 truncate_length: 
 # enable toc
