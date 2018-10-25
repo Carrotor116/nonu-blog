@@ -25,4 +25,4 @@
       font-size: 84%;
   }
 }
-</style>
+</style> 
