@@ -2,7 +2,7 @@
 title: Color correction for stereoscopic image based on matching and optimization
 id: MO_color_correction
 date: 2018-10-26 00:22:10
-tags: ['color correction', 'stereoscopic image']
+tags: ['color correction', 'stereoscopic image', 'unresolved issues']
 mathjax: true
 ---
 结合全局和局部颜色信息，矫正S3D图的颜色差异
@@ -87,7 +87,7 @@ p_3 & M_i \geq \gamma
 $$
 其中 $I\_{R\_i}$ 和 $I'\_{R\_i}$ 为区域 $R\_i$ 的初始结和优化颜色值。由于匹配图中的像素通常比 ACG-CDT 结果中的像素更具有一致性，所以根据区域的像素来源，使用 $D\_i$ 给与不同区域不同的权重。$M\_i$ 是区域中来自匹配图的像素于总像素之间的比值，$\beta$ 和 $\gamma$ 是阈值，本文取值 0.5 和 1 ，$p\_1$ 、$p\_2$ 和 $p\_3$ 分别取 1、5、10 。
 
-problem：
+<span style="color: #f00">**problem：**<span>
 
 1. 像素来自匹配图的多，$M\_i$ 变大，$D\_i$ 变大，$E\_1$ 变大。而其描述是取自匹配图像素多更具有一致性，与公式导致的优化方向矛盾。（优化方向是 E 减小）
 
@@ -105,7 +105,7 @@ q_3 & \gamma \leq M_i
 $$
 $N\_j^l$ 是区域 $R\_i$ 的邻居区域集合，$C\_{ij}$ 是两个区域的颜色相似度，$||d\_c(i,j)||^2\_2$ 是两个区域的平均颜色之间的 $L\_2$ 标准距离平方，$\bar {d\_c}$  是任意两个区域的颜色距离的平方均值，$\sigma\_c^2$ 取 0.2 。$L\_i$ 类似 $D\_i$ ，当区域中的像素来自 ACG-CDT 结果图时，使用大权重以强化区域的一致性。$q\_1$、$q\_2$ 、$q\_3$ 分别取值 25、15、6 。
 
-problem：
+<span style="color: #f00">**problem：**<span>
 
 1. 矛盾点：颜色越相似，颜色距离小，$C\_{ij}$ 越大，$E\_2$ 越大。而优化是往 $E\_2$ 减小的方向优化的。
 2. 取值 ACG-CDT 结果图像素多时，$M\_i$ 应该减少，$L\_i$ 变大，与其描述相同。可为什么优化方向（方向是减小$E\_2$）是减少取自 ACG-CDT 的像素，其理由是什么。
@@ -116,7 +116,7 @@ E_3 = \sum_i\sum_{j\in N_i^g} ||I'_{R_i} - I'_{R_j}||^2 C_{ij} L_i
 $$
 其中 $N\_i^g$ 是于区域 $R\_i$ 具有最相似颜色的区域的集合，实验中，选择前15个颜色最相似的区域。
 
-problem：
+<span style="color: #f00">**problem：**<span>
 
 1. 在公式中，区域越相似，$C\_{ij}$ 越大。而优化方向是减少 $E\_3$，所以减少区域的相似性的合理性是什么？$L\_i$ 与匹配图有关，可其在该公式中的意义是什么？
 
