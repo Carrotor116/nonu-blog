@@ -1,5 +1,5 @@
 ---
-title: About Me
+title: "[ About Me ]"
 layout: about
 date: 2018-08-17 17:36:28
 ---

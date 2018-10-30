@@ -1,6 +1,6 @@
 ---
 title: PR-AUC and ROC-AUC
-id: custom_id
+id: PR-AUC_and_ROC-AUC
 date: 2018-10-30 15:58:53
 tags: ['RP-AUC', 'ROC-AUC']
 mathjax: true
@@ -176,6 +176,7 @@ FPR = 1910 / (1910 + 998,080) = 0.00191
 **所以当数据集中的 negative 很大时（数据失衡），ROC 差异较小，PR 更能表现算法之间的差异。**
 
 > Typically, if true negatives are not meaningful to the problem or negative examples just dwarf the number of positives, precision-recall is typically going to be more useful
+
 
 >Clearly, the PR is much better in illustrating the differences of the algorithms in the case where there are a lot more negative examples than the positive examples.
 

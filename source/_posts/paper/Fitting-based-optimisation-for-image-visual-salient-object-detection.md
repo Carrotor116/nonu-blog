@@ -2,7 +2,7 @@
 title: Fitting-based optimisation for image visual salient object detection
 id: FO_for_SDA
 date: 2018-10-26 00:38:03
-tags: ['fitting-based', 'salient detection']
+tags: ['fitting-based', 'saliency detection']
 mathjax: true
 ---
 
