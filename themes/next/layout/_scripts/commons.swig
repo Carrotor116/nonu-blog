@@ -6,5 +6,21 @@
 %}
 
 {% for common in js_commons %}
-  <script type="text/javascript" src="{{ url_for(theme.js) }}/{{ common }}?v={{ version }}"></script>
+
+  {% if theme.instantclick.enabled %}
+    {% set dni = false %}
+    {% for i in theme.instantclick.data_no_instant %}
+      {% if common.indexOf(i+".js") > 0 %}
+         {% set dni = true %}
+      {% endif %}
+    {% endfor %}
+    {% if dni %}
+      <script type="text/javascript" src="{{ url_for(theme.js) }}/{{ common }}?v={{ version }}" data-no-instant></script>
+    {% else %}
+      <script type="text/javascript" src="{{ url_for(theme.js) }}/{{ common }}?v={{ version }}"></script>
+    {% endif %}
+  {% else %}
+    <script type="text/javascript" src="{{ url_for(theme.js) }}/{{ common }}?v={{ version }}"></script>
+  {% endif %}
+
 {% endfor %}

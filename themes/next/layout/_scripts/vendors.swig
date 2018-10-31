@@ -56,6 +56,20 @@
   {% if name == 'canvas_ribbon' %}
     <script id="ribbon" type="text/javascript" size="{{ theme.canvas_ribbon.size }}" alpha="{{ theme.canvas_ribbon.alpha }}"  zIndex="{{theme.canvas_ribbon.zIndex }}" src="{{ theme.vendors[name] | default(internal_script) }}"></script>
   {% else %}
-    <script type="text/javascript" src="{{ theme.vendors[name] | default(internal_script) }}"></script>
+    {% if theme.instantclick.enabled %}
+      {% set dni = false %}
+      {% for i in theme.instantclick.data_no_instant %}
+        {% if name == i %}
+           {% set dni = true %}
+        {% endif %}
+      {% endfor %}
+      {% if dni %}
+        <script type="text/javascript" src="{{ theme.vendors[name] | default(internal_script) }}" data-no-instant></script>
+      {% else %}
+        <script type="text/javascript" src="{{ theme.vendors[name] | default(internal_script) }}"></script>
+      {% endif %}
+    {% else %}
+      <script type="text/javascript" src="{{ theme.vendors[name] | default(internal_script) }}"></script>
+    {% endif %}
   {% endif %}
 {% endfor %}

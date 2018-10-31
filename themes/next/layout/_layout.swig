@@ -118,5 +118,25 @@
   {% include '_third-party/exturl.swig' %}
   {% include '_third-party/bookmark.swig' %}
   {% include '_third-party/copy-code.swig' %}
+
+  {% if theme.instantclick.enabled %}
+  <!-- for InstantClick -->
+  <script type="text/javascript" src= "/js/src/instantclick.min.js" data-no-instant></script>
+  <script data-no-instant>
+    InstantClick.on('change', function(isInitialLoad) {
+     if (isInitialLoad === false) {
+       if (typeof MathJax !== 'undefined') // support MathJax
+         MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+       if (typeof prettyPrint !== 'undefined') // support google code prettify
+         prettyPrint();
+       if (typeof _hmt !== 'undefined')  // support baidu analytics
+         _hmt.push(['_trackPageview', location.pathname + location.search]);
+       if (typeof ga !== 'undefined')  // support google analytics
+           ga('send', 'pageview', location.pathname + location.search);
+     }
+   });
+   InstantClick.init(70);
+ </script>
+ {% endif %} 
 </body>
 </html>
