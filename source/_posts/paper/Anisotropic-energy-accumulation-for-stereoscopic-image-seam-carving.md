@@ -1,6 +1,6 @@
 ---
 title: Anisotropic energy accumulation for stereoscopic image seam carving
-id: AESSC
+id: aseec
 date: 2018-09-29 12:41:58
 tags: ['Stereo image resizing', 'stereo seam carving', 'accumulative energy', 'forward energy', '3D structure energy']
 mathjax: true

@@ -2,7 +2,7 @@
 title: >-
   Image Quality Assessment for Color Correction Based on Color Contrast
   Similarity and Color Value Difference
-id: IQA4color-correction
+id: iqa4color-correction
 date: 2018-09-20 15:29:02
 tags: ['image quality assessment', 'color correction', 'visual saliency', 'color contrast similarity', 'color value difference']
 mathjax: true

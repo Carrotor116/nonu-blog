@@ -1,6 +1,6 @@
 ---
 title: Region-Aware Image Denoising by Exploring Parameter Preference
-id: RAID-by-exploring-parameter-preference
+id: raid-by-exploring-parameter-preference
 date: 2018-09-27 13:49:41
 mathjax: true
 tags: ['Image denoising', 'denoising parameter', 'machine learning', 'region-aware']

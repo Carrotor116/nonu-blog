@@ -1,6 +1,6 @@
 ---
 title: Color correction for stereoscopic image based on matching and optimization
-id: MO_color_correction
+id: mo_color_correction
 date: 2018-10-26 00:22:10
 tags: ['color correction', 'stereoscopic image', 'unresolved issues']
 mathjax: true

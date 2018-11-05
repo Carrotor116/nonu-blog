@@ -1,6 +1,6 @@
 ---
 title: CF-based optimisation for saliency detection 理论
-id: CFO4saliency_detection
+id: cfo4saliency_detection
 date: 2018-09-15 21:32:07
 mathjax: true
 tags: ['image colour analysis', 'image enhancement', 'optimisation']

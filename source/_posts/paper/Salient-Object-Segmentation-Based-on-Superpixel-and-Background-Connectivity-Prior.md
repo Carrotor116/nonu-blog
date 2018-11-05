@@ -2,7 +2,7 @@
 title: >-
   Salient Object Segmentation Based on Superpixel and Background Connectivity
   Prior
-id: SOS_based_on_superpixel_and_BCP
+id: sos_based_on_superpixel_and_bcp
 category: paper
 date: 2018-11-05 17:03:41
 mathjax: true

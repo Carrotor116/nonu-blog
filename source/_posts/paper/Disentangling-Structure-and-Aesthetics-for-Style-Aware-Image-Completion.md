@@ -1,6 +1,6 @@
 ---
 title: Disentangling Structure and Aesthetics for Style-Aware Image Completion
-id: Style-Aware-Image-completion
+id: style-aware-image-completion
 date: 2018-09-20 08:46:56
 tags: ['style-aware', 'image completion', 'image']
 mathjax: true

@@ -1,6 +1,6 @@
 ---
 title: Machine learning-based framework for saliency detection in distorted images
-id: ML_framework_for_SD
+id: ml_framework_for_sd
 date: 2018-10-30 15:37:48
 tags: ['saliency detection', 'distorted imgaes', 'unresolved issues']
 mathjax: true

@@ -1,6 +1,6 @@
 ---
 title: PR-AUC and ROC-AUC
-id: PR-AUC_and_ROC-AUC
+id: pr-auc_and_roc-auc
 date: 2018-10-30 15:58:53
 tags: ['RP-AUC', 'ROC-AUC']
 mathjax: true
