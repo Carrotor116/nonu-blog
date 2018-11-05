@@ -1,8 +1,8 @@
 :: new a post in special category 
 @echo off
 
-if "%1" == "" goto usage
-if "%2" == "" goto usage 
+if %1 == "" goto usage
+if %2 == "" goto usage 
 
 hexo new post %2 --category %1
 
