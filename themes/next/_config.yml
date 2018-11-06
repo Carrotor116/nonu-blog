@@ -1012,8 +1012,9 @@ js: js
 images: images
 
 instantclick:
-  enabled: true
+  enabled: false
   data_no_instant:
   data_instant:
+    - pisces
     - motion
-    # - utils
+    - utils

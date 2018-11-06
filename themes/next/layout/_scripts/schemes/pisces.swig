@@ -6,5 +6,9 @@
 %}
 
 {% for script in scripts %}
-  <script type="text/javascript" src="{{ url_for(theme.js) }}/{{ script }}?v={{ version }}"></script>
+  {% if theme.instantclick.enabled %}
+    <script type="text/javascript" src="{{ url_for(theme.js) }}/{{ script }}?v={{ version }}" data-no-instant></script>
+  {% else %}
+    <script type="text/javascript" src="{{ url_for(theme.js) }}/{{ script }}?v={{ version }}"></script>
+  {% endif %}
 {% endfor %}
