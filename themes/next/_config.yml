@@ -1014,3 +1014,6 @@ images: images
 instantclick:
   enabled: true
   data_no_instant:
+  data_instant:
+    - motion
+    # - utils

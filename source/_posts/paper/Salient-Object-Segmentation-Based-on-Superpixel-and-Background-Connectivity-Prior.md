@@ -116,8 +116,10 @@ BCP 用于量化一个区域连接到图像边界的程度。本文使用 SO [^1
 
 **定义边界平滑项：**
 $$
+\begin{aligned}
 V(x,z) = \gamma \sum_{(i,j)\in Cut}[x_i\neq x_j]exp(-\beta||z_i-z_j||^2)\\
 \beta =(2<||z_i-z_j||^2>)^{-1}
+\end{aligned}
 $$
 其中 $\gamma$ 为相关系数，取常数 0.5 。$Cut$ 是邻居节点集合。$x$ 是表示分割结果的向量，$z$ 是图像的每个像素组成的数据集。$z\_i$ 是节点 $i$ 的颜色值（超像素中取均值），$x\_i$ 是节点 $i$ 对应的分割 label。$\beta$ 为衰变因子及其 $<\cdot>$ 代表一个彩色图像的期望（用作权重值，由图像对比度决定）。
 
@@ -141,8 +143,10 @@ $$
 
 一旦 GMM 模型建立，就可以使用通过每个超像素\像素 $p\_i$ 得到 $\theta$，然后得到区域项 $U$
 $$
+\begin{aligned}
 U(x,\theta,z) = \sum_{i=1}^N[-\log\pi(x_i,k_i) +1/2\cdot\log\det(\sum(x_i,k_i))\\
 +1/2\cdot (z_i-\mu(x_i,k_i))^T\sum(x_i,k_i)^{-1}(z_i-\mu(x_i,k_i))]
+\end{aligned}
 $$
 $N$ 为颜色样本数量，$\det(\cdot)$ 为行列式。区域项 $U$ 表示每个节点属于前景或背景区域的的可能性
 
@@ -205,17 +209,17 @@ $\hat{x}\_i = 1$ 表示超像素\像素 $p\_i$ 属于前景区域，否则为0�
 1. 无论输入的显著性图精度如何，只要其处于 BCP 产生的伪前景区域，均可以用于分割过程
 2. labeling method [^3] 对潜在前景区域的标记具有高的recall。然而当显著性图中存在相互分离的显著性对象时，该方法不能标记出所有显著性对象（即只能标记出单个显著性对象）。而本文方法不会出现漏标记情况。
 
- ### segmentation comparison
+### segmentation comparison
 
 SalCut 由于其 labeling 方法只能标记一个，其分割结果只能是一个连通的区域。而其他方法能够分割出所有区域，可与 ground-truth 的相似度不如本文方法高。
 
 通过对比 F-Measure 、MAE、IoU，本文的方法在数值上表现总的来说优于其他算法。
 $$
-\begin{align}
+\begin{aligned}
 & F_b = \frac{(1+\beta^2)\cdot Precision\cdot Recall}{\beta^2\cdot Precision+Recall}\\
 & MAE = \frac{1}{W\cdot H}\sum_{x=1}^W\sum_{y=1}^H ||S(x,y)-G(x,y)||\\
 & IoU = \frac{||S\cap G||}{||S\cup G||}
-\end{align}
+\end{aligned}
 $$
 其中 $\beta^2$ 设置为 0.3 , $W$ ，MAE 中 $H$ 为是 ground-truth $G$ 和 分割结果 $S$ 的宽高 ， IoU 中 $G$ 和 $S$ 分别是ground-truth 和 分割结果的掩图
 

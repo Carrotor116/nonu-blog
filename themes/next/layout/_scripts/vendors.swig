@@ -66,7 +66,17 @@
       {% if dni %}
         <script type="text/javascript" src="{{ theme.vendors[name] | default(internal_script) }}" data-no-instant></script>
       {% else %}
-        <script type="text/javascript" src="{{ theme.vendors[name] | default(internal_script) }}"></script>
+        {% set di = false %}
+        {% for i in theme.instantclick.data_instant %}
+          {% if name == i %}
+          {% set di = true %}
+          {% endif %}
+        {% endfor %}
+        {% if di %}
+          <script type="text/javascript" src="{{ theme.vendors[name] | default(internal_script) }}" data-instant></script>
+        {% else %}
+          <script type="text/javascript" src="{{ theme.vendors[name] | default(internal_script) }}"></script>
+        {% endif %}
       {% endif %}
     {% else %}
       <script type="text/javascript" src="{{ theme.vendors[name] | default(internal_script) }}"></script>

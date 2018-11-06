@@ -17,7 +17,17 @@
     {% if dni %}
       <script type="text/javascript" src="{{ url_for(theme.js) }}/{{ common }}?v={{ version }}" data-no-instant></script>
     {% else %}
-      <script type="text/javascript" src="{{ url_for(theme.js) }}/{{ common }}?v={{ version }}"></script>
+      {% set di = false %}
+      {% for i in theme.instantclick.data_instant %}
+        {% if common.indexOf(i+".js") > 0 %}
+          {% set di = true %}
+        {% endif %}
+      {% endfor %}
+      {% if di %}
+        <script type="text/javascript" src="{{ url_for(theme.js) }}/{{ common }}?v={{ version }}" data-instant></script>
+      {% else %}
+        <script type="text/javascript" src="{{ url_for(theme.js) }}/{{ common }}?v={{ version }}"></script>
+      {% endif %}
     {% endif %}
   {% else %}
     <script type="text/javascript" src="{{ url_for(theme.js) }}/{{ common }}?v={{ version }}"></script>
