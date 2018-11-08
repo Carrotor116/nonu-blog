@@ -1,9 +1,12 @@
 {%
   set js_commons = [
-    'src/utils.js',
-    'src/motion.js'
+    'src/utils.js'
   ]
 %}
+
+{% if theme.motion.enable %}
+        <script type="text/javascript" src="{{ url_for(theme.js) }}/src/motion.js?v={{ version }}" data-instant></script>
+{% endif %}
 
 {% for common in js_commons %}
 

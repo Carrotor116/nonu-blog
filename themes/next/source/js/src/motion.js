@@ -1,5 +1,5 @@
 /* global NexT, CONFIG */
-
+var nextMotion = true
 $(document).ready(function() {
   NexT.motion = {};
 

@@ -38,6 +38,8 @@ $(document).ready(function() {
   NexT.utils.embeddedVideoTransformer();
 
   // Define Motion Sequence.
+  if(typeof nextMotion != 'undefined') {
+  
   NexT.motion.integrator
     .add(NexT.motion.middleWares.logo)
     .add(NexT.motion.middleWares.menu)
@@ -50,4 +52,5 @@ $(document).ready(function() {
   CONFIG.motion.enable && NexT.motion.integrator.bootstrap();
 
   $(document).trigger('bootstrap:after');
+}
 });

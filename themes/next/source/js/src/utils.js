@@ -125,7 +125,11 @@ NexT.utils = NexT.$u = {
     });
 
     $top.on('click', function() {
-      $('body').velocity('scroll');
+      if(typeof nextMotion == 'undefined') {
+        scrollTo(0,0);
+      }else{
+        $('body').velocity('scroll');        
+      }
     });
   },
 
