@@ -1,6 +1,6 @@
 ---
 title: Improved motion compensation for 360° video projected to polytopes
-id: custom_id
+id: motion-compensation-optimization
 category: paper
 date: 2018-11-09 20:48:46
 tags: ['motion compensation', '360 video']
