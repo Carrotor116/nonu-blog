@@ -1,14 +1,19 @@
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
+      showProcessingMessages: false,
+      messageStyle: "none",
       tex2jax: {
         inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
         processEscapes: true,
         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
       },
-      TeX: {equationNumbers: { autoNumber: "AMS" }}
+      TeX: {equationNumbers: { autoNumber: "AMS" }},
+      "HTML-CSS": {
+        availableFonts: ["STIX", "TeX"],
+        showMathMenu: false
+      }
     });
 </script>
-
 <script type="text/x-mathjax-config">
     MathJax.Hub.Queue(function() {
       var all = MathJax.Hub.getAllJax(), i;
@@ -18,11 +23,3 @@
     });
 </script>
 <script type="text/javascript" src="{{ theme.math.mathjax.cdn }}"></script>
-
-<style type="text/css">
-@media (min-width: 1200px) {
-  .MathJax {
-      font-size: 84%;
-  }
-}
-</style> 
