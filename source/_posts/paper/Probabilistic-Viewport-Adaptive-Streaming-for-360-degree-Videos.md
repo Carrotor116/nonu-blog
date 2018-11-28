@@ -27,8 +27,7 @@ mathjax: true
 
 
 
-> 论文：Probabilistic Viewport Adaptive Streaming for 360-degree Videos
-
+> 论文：[Probabilistic Viewport Adaptive Streaming for 360-degree Videos](https://ieeexplore.ieee.org/document/8351404)
 
 ---
 
@@ -62,9 +61,9 @@ $$
 \end{aligned}
 $$
 
-> 注意按公式中的约束条件，对于一个视口 $i$， 只会有一个比特率为 $j$ 的分片会被选择。
+> 注意按公式中的约束条件，对于一个视口 $i$， 只会有一个比特率为 $j$ 的分片会被选择。其由于要最大化图像质量，每个视口都会被选择出一个比特率级别的分片进行传输。
 
-由于该算法会选择了多个视口进行传输，所以即使用户方向预测错误，也能通过播放其他视口来缓解用户体验下降。
+由于该算法会选择出每个视口的一个比特率分片进行传输，所以即使用户方向预测错误，正确的分片也有传输，及不会因为观看分片的确实导致用户体验大幅度下降。
 
 
 
@@ -72,7 +71,7 @@ $$
 
 **视口预测：**本文使用欧拉角度 偏航(yaw) $\alpha$ 、俯仰(pitch) $\beta$  和滚动(roll) $\gamma$ 来表示用户发方向，使用线性回归模型进行预测。
 
-记 $t\_0$ 为当前时刻，使用最小二乘法计算用户移动趋势。用 $v\_{\alpha}$、$v\_{\beta}$ 和 $v\_{\gamma}$ 表示三个维度的坡度(slop)，则i经过时间 $\triangle t$ 间隔后，三个维度的值如下
+记 $t\_0$ 为当前时刻，使用最小二乘法计算用户移动趋势。用 $v\_{\alpha}$、$v\_{\beta}$ 和 $v\_{\gamma}$ 表示三个维度的坡度(slop)，则经过时间 $\triangle t$ 间隔后，三个维度的值如下
 $$
 \begin{aligned}
 \hat \alpha (t_0 + \triangle t) =v_{\alpha}\cdot \triangle t + \alpha(t_0)\\
