@@ -1,6 +1,6 @@
 ---
 title: co-projection-plane based 3-D padding method
-id: [co-projection-3d-padding]
+id: co-projection-3d-padding
 category: paper
 mathjax: true
 date: 2018-11-08 09:46:45
