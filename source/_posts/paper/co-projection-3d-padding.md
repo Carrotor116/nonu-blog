@@ -4,7 +4,7 @@ id: co-projection-3d-padding
 category: paper
 mathjax: true
 date: 2018-11-08 09:46:45
-tags: ['co-projection', '360video']
+tags: ['co-projection', '360 video']
 ---
 
 本文提出一个基于共投影平面的填充方法，利用邻居平面的像素信息，对平面进行扩张填充以维持全景视频二维映射的纹理一致性。
@@ -39,7 +39,7 @@ tags: ['co-projection', '360video']
 
 
 
-## The Method 
+## The Method
 
 本文以六面体映射中的一个面（右面）为例说明。
 
@@ -101,15 +101,15 @@ $$
 
 ## Experiment
 
-软件：HEVC 参考软件 HM-16.6 
+软件：HEVC 参考软件 HM-16.6
 
 测试条件： RA main 10、LD main 10 和 LDP mian 10，
 
 参数设置：quantization parameters (QP) 为 22，27，32，37; m 设置为64。
 
-评价方式：BD-rate（Bjontegaard Delta rate）;  WS-PSNR [10] and S-PSNR [11] 
+评价方式：BD-rate（Bjontegaard Delta rate）;  WS-PSNR [10] and S-PSNR [11]
 
-对比编码方式：HEVC anchor 
+对比编码方式：HEVC anchor
 
 数据集：论文[^12] ，并且使用论文 [^3] 中的转换工具将 10 bit 的 4 x 3 立方体格式
 

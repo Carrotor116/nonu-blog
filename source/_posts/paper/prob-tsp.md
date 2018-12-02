@@ -3,7 +3,7 @@ title: Probabilistic Viewport Adaptive Streaming for 360-degree Videos
 id: prob-tsp
 category: paper
 date: 2018-11-14 19:17:49
-tags: ['360video', 'motion prediction', 'adaptive']
+tags: ['360 video', 'motion prediction', 'adaptive']
 mathjax: true
 ---
 
