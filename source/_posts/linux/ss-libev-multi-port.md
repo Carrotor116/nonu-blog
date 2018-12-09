@@ -21,7 +21,7 @@ ss: shadowsocks-libev 3.2.0
 ```json
 {
     "server":"server_ip",
-    "server_port":server_port,
+    "server_port": server_port,
     "local_port":1080,
     "password":"custom password",
     "timeout":300,
@@ -31,14 +31,17 @@ ss: shadowsocks-libev 3.2.0
 ```
 
 ### 创建ss批量启动脚本
-新建`/usr/local/bin/shadowsocks-libev-autostart.sh`文件
+新建 `/usr/local/bin/shadowsocks-libev-autostart.sh` 文件 ([download](shadowsocks-libev-autostart.sh))
 ```shell
-#!/bin/sh
-proc=/usr/bin/ss-server
-config_dir=/etc/shadowsocks-libev
-arg=" --fast-open -u "
-config_files=()
+#!/bin/bash
 
+proc=/usr/local/bin/ss-server
+config_dir=/etc/shadowsocks-libev
+log_dir=/var/log/shadowcosks
+
+arg=" --fast-open -u -v "
+
+config_files=()
 files=$(ls $config_dir)
 for f in $files
 do 
@@ -49,11 +52,11 @@ do
   fi
 done 
 
+mkdir -p $log_dir
 for f in ${config_files[@]}
 do 
-  $proc -c $config_dir/$f $arg -f /var/run/$f.pid
-done 
-echo "complete. "
+   nohup $proc -c $config_dir/$f $arg  >> $log_dir/${f%.*}.log 2>&1 &
+done
 ```
 
 ### 配置systemd自启动
