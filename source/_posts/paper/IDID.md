@@ -21,6 +21,11 @@ mathjax: true
 输入信号和输出信号 ( detail signal，由上采样操作生产) 之间的**差异**对于完美重构是不可缺少的。这需要最小化输出信号的能量。而论文 [^17] [^18] 没有给出最小化 输出信号 的方法。
 
 
+> 论文：[Interpolation-Dependent Image Downsampling - IEEE Journals & Magazine](https://ieeexplore.ieee.org/abstract/document/5782987)
+
+
+---
+
 
 ## IDID
 
