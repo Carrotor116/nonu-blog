@@ -11,31 +11,31 @@ social:
   github: https://github.com/Carrotor116
   # wechat and qq should be a path of qr-code image
   # wechat: /assets/example_qr.png
-  qq: 
-  telegram: 
-  weibo: 
-  zhihu: 
-  douban: 
-  facebook: 
-  twitter: 
-  instagram: 
-  stack-overflow: 
-  segmentFault: 
-  juejin: 
-  v2ex: 
-  bilibili: 
-  linkedin: 
-  steam: 
-  others: 
-  rss: 
+  qq:
+  telegram:
+  weibo:
+  zhihu:
+  douban:
+  facebook:
+  twitter:
+  instagram:
+  stack-overflow:
+  segmentFault:
+  juejin:
+  v2ex:
+  bilibili:
+  linkedin:
+  steam:
+  others:
+  rss:
 # friends
 # friends:
 #   friendA: //www.baidu.com
 #   friendB: //www.google.com
-#   friendC: 
+#   friendC:
 about:
   enable: true
-  image: '/intro/about-bg-cpr.jpg'
+  image: '/about/about-bg-cpr.jpg'
 
 # ========== Site ========== #
 # title of the site (good for SEO)
@@ -47,11 +47,11 @@ main_title: nonu's Lab.
 # subtitle
 subtitle: EL PSY CONGROO
 # site haeder image
-site_header_image: '/intro/index-bg-cpr.jpg'
+site_header_image: '/about/index-bg-cpr.jpg'
 # post haeder image
-post_header_image: '/intro/post-bg-cpr.png'
+post_header_image: '/about/post-bg-cpr.png'
 # 404 image
-_404_image: '/intro/404-bg-cpr.jpg'
+_404_image: '/about/404-bg-cpr.jpg'
 
 # ========== Search ========== #
 algolia_search:
@@ -68,20 +68,20 @@ algolia_search:
 # If you want to add other comment plugin, edit in "custom.ejs"
 comment:
   # Livere  site: https://livere.com/
-  livere_uid: 
+  livere_uid:
   # Disqus  site: https://disqus.com/
-  disqus_shortname: 
+  disqus_shortname:
   # Gitment  site: https://github.com/imsun/gitment
-  gitment_owner: 
-  gitment_repo: 
-  gitment_client_id: 
-  gitment_client_secret: 
+  gitment_owner:
+  gitment_repo:
+  gitment_client_id:
+  gitment_client_secret:
   # Youyan  site: http://www.uyan.cc/
-  youyan_uid: 
+  youyan_uid:
   # Valine  site: https://valine.js.org/
-  valine_appId: 
-  valine_appKey: 
-  valine_placeHolder: 
+  valine_appId:
+  valine_appKey:
+  valine_placeHolder:
 
 # ========== Analytics ========== #
 # enable Busuanzi analytics
@@ -91,17 +91,17 @@ busuanzi_pv_or_uv: 'pv'
 # custom analytic slogan, '${count}' is the analytic number, DO NOT modify it.
 busuanzi_slug: 'PV: ${count} :)'
 # Baidu analytics
-baidu_analytics: 
+baidu_analytics:
 # Google analytics
-google_analytics: 
+google_analytics:
 # CNZZ analytics
-CNZZ_analytics: 
+CNZZ_analytics:
 
 # ========== Others ========== #
 # favicon
 favicon: /assets/favicon.ico
 # truncate length of abstracts in index page (the default is 300, there will be no abstruct if you input 0)
-truncate_length: 
+truncate_length:
 # enable toc
 toc: true
 # word count & reading time
