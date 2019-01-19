@@ -13,7 +13,7 @@ mathjax: true
 
 <!-- more  -->
 
-论文[^6][^7] 中提出了类似方法，不同之处在于他们都是基于线性方程直接计算其他平面上的对应点，其相应的推导仅适用于立方体映射，不能用于其他凸面体映射。而本文方法可适用于任意凸面体映射。
+论文[^6] [^7] 中提出了类似方法，不同之处在于他们都是基于线性方程直接计算其他平面上的对应点，其相应的推导仅适用于立方体映射，不能用于其他凸面体映射。而本文方法可适用于任意凸面体映射。
 
 
 > 论文：[Improved motion compensation for 360° video projected to polytopes](https://ieeexplore.ieee.org/abstract/document/8019517)
