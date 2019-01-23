@@ -1,9 +1,7 @@
+---
 id: emotional 
-
 title: Emotional 
-
-date: 2019-1-19 19:16:28
-
+date: 2019-1-9 7:21:28
 ---
 
 
