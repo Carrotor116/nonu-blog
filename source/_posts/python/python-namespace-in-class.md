@@ -10,7 +10,7 @@ tag: ['namespace', 'python', 'class']
 
 ## Class
 
-前文 ([Python Namespace](python_namespace)) 说了，可以将一层 **def 缩进** 视为一个 namespace ，而类在 python 中使用 `class` 定义的，一个 **class 缩进** 也可以视为一个 namespace
+前文 ([Python Namespace](/python/python_namespace)) 说了，可以将一层 **def 缩进** 视为一个 namespace ，而类在 python 中使用 `class` 定义的，一个 **class 缩进** 也可以视为一个 namespace
 
 ```python
 class ClassName
