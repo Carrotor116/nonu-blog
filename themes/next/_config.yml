@@ -1018,3 +1018,6 @@ instantclick:
     - pisces
     - motion
     - utils
+
+quicklink:
+  enabled: true

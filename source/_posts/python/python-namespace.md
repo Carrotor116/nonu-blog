@@ -79,10 +79,13 @@ a = 1
 def write_a():
     a = 2
 
+def get_a():
+    return a
+
 if __name__ == '__main__':
-    print a  # 1
+    print get_a()  # 1
     write_a()
-    print a  # 1
+    print get_a()  # 1
 ```
 
 在 `write_a` 中对 `a` 进行写操作，解释器会在 `write_a` 这个 namespace 内创建同名的 `a` 变量，而 `get_a` 这个函数则始终搜索到的是其上级 namespace 的 `a` 。
@@ -101,16 +104,19 @@ a = 1
 def write_a():
     a = 2
 
+def get_a():
+    return a
+
 def write_global_a():
     global a
     a = 3
 
 if __name__ == '__main__':
-    print a  # 1
+    print get_a()  # 1
     write_a()
-    print a  # 1
+    print get_a()  # 1
     write_global_a()
-    print a  # 3
+    print get_a()  # 3
 ```
 
 

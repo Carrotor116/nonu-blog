@@ -122,5 +122,8 @@
   {% if theme.instantclick.enabled %}
      {% include '_custom/instantclick.swing' %}
   {% endif %}
+  {% include '_custom/quicklink.swing' %}
+
+
 </body>
 </html>

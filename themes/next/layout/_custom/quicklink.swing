@@ -1,0 +1,10 @@
+{% if theme.quicklink.enabled %}
+<script src="/js/src/quicklink.umd.js"></script>
+<script>
+window.addEventListener('load', () =>{
+   quicklink({
+     ignores: [ /#(.+)/ ]
+   });
+});
+</script>
+{% endif %}
