@@ -17,7 +17,7 @@ ss: shadowsocks-libev 3.2.0
 3. 配置systemd自启动
 
 ### 创建ss配置文件
-新建`/et/shadowsocks-libev/config_x.json`文件
+新建`/etc/shadowsocks-libev/config_x.json`文件
 ```json
 {
     "server":"server_ip",
@@ -82,7 +82,7 @@ WantedBy=multi-user.target
 ```
 
 ## 使用方式
-需要添加新端口的时候，新建`/et/shadowsocks-libev/config_{x}.json`文件，如`config_1.json`、`config_2.json`，配置对应端口和密码，然后重启systemd的`sslibev`服务即可。
+需要添加新端口的时候，新建`/etc/shadowsocks-libev/config_{x}.json`文件，如`config_1.json`、`config_2.json`，配置对应端口和密码，然后重启systemd的`sslibev`服务即可。
 
 ## 其他
 ```bash
