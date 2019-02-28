@@ -3,7 +3,9 @@
 <script>
 window.addEventListener('load', () =>{
    quicklink({
-     ignores: [ /#(.+)/ ]
+     ignores: [ /#(.+)/ , /\.txt/, /\.sh/,
+     /\.zip/, /\.rar/, /\.7z/, /\.tar/,
+     /\.png/, /\.jpg/, /\.jpeg/, /\.gif/ ]
    });
 });
 </script>
