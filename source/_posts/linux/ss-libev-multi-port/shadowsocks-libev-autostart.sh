@@ -2,23 +2,15 @@
 
 proc=/usr/local/bin/ss-server
 config_dir=/etc/shadowsocks-libev
-log_dir=/var/log/shadowcosks
+log_dir=/etc/shadowsocks-libev
 
-arg=" --fast-open -u -v "
+arg=" -v "
 
 config_files=()
-files=$(ls $config_dir)
-for f in $files
-do 
-  if [[ $f =~ "config_" ]]
-  then 
-    len=${#config_files[@]}
-    config_files[$len]=$f
-  fi
-done 
+files=$(ls ${config_dir}/config_*.json)
 
-mkdir -p $log_dir
-for f in ${config_files[@]}
+for f in ${files[@]}
 do 
-   nohup $proc -c $config_dir/$f $arg  >> $log_dir/${f%.*}.log 2>&1 &
+   fn=${f##*/}
+   nohup $proc -c $f $arg  >> ${log_dir}/${fn%.*}.log 2>&1 &
 done
