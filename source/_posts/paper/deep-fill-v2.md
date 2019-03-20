@@ -105,11 +105,11 @@ $$
 
 判别器结构：六个卷积，`kernel_size` 5 ，`stride` 2 ， <u>用于提取 `Markovian` 块的特征统计</u>。然后直接在该 features 上使用 GANs 。<u>通过参数设置， `output map` 中的每个 `point` 的接收域可以覆盖这个输入图像，所以不需要 global discriminator 。</u>
 
-采用 [spectral normalization](https://arxiv.org/abs/1802.05957) 权值归一化技术进一步提升 GAN 的稳定性，objective function 如下
+采用 [spectral normalization](https://arxiv.org/abs/1802.05957) 的权值归一化技术进一步提升 GAN 的稳定性，使用 `hinge loss` 作为 objective function 如下
 $$
 \begin{aligned}
 \zeta_{D^{sn} } = & {\mathbb E}_{x\sim {\mathbb P}_{data}(x)}[ReLU(1-D^{sn}(x))] + \\
-&{\mathbb E}_{z\sim {\mathbb P}_{z}(z)}[ReLU(1-D^{sn}(z))]\\
+&{\mathbb E}_{z\sim {\mathbb P}_{z}(z)}[ReLU(1+D^{sn}(z))]\\
 \zeta_G = & -{\mathbb E}_{z\sim {\mathbb P}_z(z)}[D^{sn}(G(z))]
 \end{aligned}
 $$
